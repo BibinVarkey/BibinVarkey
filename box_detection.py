@@ -31,7 +31,7 @@ def box_extraction(img_for_box_extraction_path, cropped_dir_path):
                                       cv2.THRESH_BINARY | cv2.THRESH_OTSU)  # Thresholding the image
     img_bin = 255-img_bin  # Invert the image
 
-    cv2.imwrite("Image_bin.jpg",img_bin)
+    cv2.imwrite("13D31.jpg",img_bin)
    
     # Defining a kernel length
     kernel_length = np.array(img).shape[1]//40
@@ -83,8 +83,8 @@ def box_extraction(img_for_box_extraction_path, cropped_dir_path):
 
     # For Debugging
     # Enable this line to see all contours.
-    # cv2.drawContours(img, contours, -1, (0, 0, 255), 3)
-    # cv2.imwrite("./Temp/img_contour.jpg", img)
+    cv2.drawContours(img, contours, -1, (0, 0, 255), 3)
+    cv2.imwrite("./Temp/img_contour.jpg", img)
 
 
-box_extraction("41.jpg", "./Cropped/")
+box_extraction("13D30-1.jpg", "./Cropped/")
